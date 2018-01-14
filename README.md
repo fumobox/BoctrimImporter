@@ -1,5 +1,7 @@
 # Boctrim Importer
 
+![Image](https://github.com/fumobox/BoctrimImporter/blob/master/Images/BoctrimImporter.png)
+
 Boctrim data importer for Unity
 
 It supports Fumotrim(.ftrim) format and Boctrim(.boctrim) format.

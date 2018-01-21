@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using Boctrim.Domain;
+
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 namespace Boctrim.Presentation
 {
@@ -20,7 +23,9 @@ namespace Boctrim.Presentation
 
         public bool GenerateCollider { get; set; }
      
+        #if UNITY_EDITOR
         public bool SaveMesh { get; set; }
+        #endif
         
         public string MeshPath { get; set; }
         
@@ -91,7 +96,6 @@ namespace Boctrim.Presentation
             mf.mesh = mesh;
 
             #if UNITY_EDITOR
-
             if (SaveMesh)
             {
                 var path = MeshPath + "/" + mesh.name + ".asset";
@@ -102,7 +106,6 @@ namespace Boctrim.Presentation
                 AssetDatabase.CreateAsset(mesh,  MeshPath + "/" + mesh.name + ".asset");
                 AssetDatabase.SaveAssets();
             }
-            
             #endif
             
             if (GenerateCollider)
